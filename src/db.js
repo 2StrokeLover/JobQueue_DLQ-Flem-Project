@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const { jobSchema } = require('./models/job');
 
@@ -5,7 +6,7 @@ let connected = false;
 
 async function connect(uri) {
   if (connected) return mongoose;
-  await mongoose.connect(uri, { });
+  await mongoose.connect(uri, {});
   connected = true;
   return mongoose;
 }
